@@ -1,0 +1,92 @@
+<div class="section">
+    <h2>Registrar Pagos </h2>
+    <br>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="box box-primary">
+                <div class="box-header">
+                    <h3 class="box-title">Datos Del Paciente</h3>
+                </div>
+                <div class="box-body">
+                    <label>Numero Documento Identidad:</label>
+                    <div class="input-group">
+                        <input class="form-control">
+                        <button class="btn btn-primary" >Buscar</button>
+                    </div>
+                </div>
+                <div class="box-footer">
+                    <strong>Nombres</strong>
+                    <input class="form-control" placeholder="Se llena Automaticamente" disabled>
+                    <br>
+                    <br>
+                    <strong>Apellidos</strong>
+                    <input class="form-control" placeholder="Se llena Automaticamente" disabled>
+                    <br>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="box box-primary">
+                <div class="box-header">
+                    <h3 class="box-title">Datos Del Pago</h3>
+                </div>
+                <div class="box-body">
+                    <label>Tratamiento:</label>
+                    <div class="input-group">
+                        <input class="form-control" placeholder="Se llena Automaticamente" disabled>
+                    </div>
+                </div>
+                <div class="box-footer">
+                    <strong>Fecha Del Pago:</strong>
+                    <input class="form-control" type="date">
+                    <br>
+                    <br>
+                    <strong>Valor A Cancelar:</strong>
+                    <input class="form-control" type="number" >
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div id="tablaBotones">
+        <table>
+            <tr>
+                <td><button id="btnRegistrar" class="btn btn-primary">Registrar Pago</button></td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td><button id="btnCancelar" class="btn btn-danger">Cancelar</button></td>
+            </tr>
+        </table>
+    </div>
+    <br>
+    <br>
+    <div class="box">
+        <div class="box-header">
+            <h2 class="box-title">Consulta De Pagos </h2>
+        </div>
+        <div class="box-body">
+            <table class="table table-bordered table-striped">
+                <thead style="text-align: center;">
+                    <tr>
+                        <th>Numero ID</th>
+                        <th>Nombre Paciente</th>
+                        <th>Apellido Paciente</th>
+                        <th>Tratamiento</th>
+                        <th>Fecha</th>
+                        <th>Valor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

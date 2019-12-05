@@ -1,0 +1,101 @@
+<div *ngIf="paciente">
+    <div class="">
+        <h2>Modificar  Paciente</h2>
+        <br>
+        <form [formGroup]="registerForm" (submit)="onSubmit()"> 
+            <div class="form-row">
+                <div class="col-md-6">
+                    <div class="box box-primary">
+                        <div class="box-body">
+                            <div class="form-group">
+                                <label>Tipo Identificacion:</label>
+                            </div>
+                            <div class="form-group">
+                                <select formControlName="tipoId"  class="form-control" [ngClass]="{ 'is-invalid':  f.tipoId.errors }">
+                                    <option value="R.C">R.C</option>
+                                    <option value="T.I">T.I</option>
+                                    <option value="C.C">C.C</option>
+                                </select>
+                                <div *ngIf="submitted && f.tipoId.errors" class="invalid-feedback">
+                                    <div *ngIf="f.tipoId.errors.required">Seleccione Un Tipo ID</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Nombres:</label>
+                            </div>
+                            <div class="form-group">
+                                <input placeholder="Digite el o los Nombres" value="{{paciente.nombres}}" type="text" formControlName="nombres" class="form-control" [ngClass]="{ 'is-invalid':  f.nombres.errors }">
+                                <div *ngIf="submitted && f.nombres.errors" class="invalid-feedback">
+                                    <div *ngIf="f.nombres.errors.required">El nombre del paciente es necesario</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Direccion:</label>
+                            </div>
+                            <div class="form-group">
+                                <input placeholder="Digite La Direccion" value="{{paciente.direccion}}" formControlName="direccion" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>Fecha Nacimiento:</label>
+                            </div>
+                            <div class="form-group">
+                                <input readonly  formControlName="fechaNacimiento" value="{{paciente.fechaNacimiento}}" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.fechaNacimiento.errors }">
+                                <div *ngIf="submitted && f.fechaNacimiento.errors" class="invalid-feedback">
+                                    <div *ngIf="f.fechaNacimiento.errors.required">La Fecha es necesaria</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="box box-primary">
+                        <div class="box-body">
+                            <div class="form-group">
+                                <label>Numero Identificacion:</label>
+                            </div>
+                            <div class="form-group">
+                                <input readonly placeholder="Digite La Identificacion " class="form-control" formControlName="identificacion_Paciente" [ngClass]="{ 'is-invalid':  f.identificacion_Paciente.errors }">
+                                <div *ngIf="submitted && f.identificacion_Paciente.errors" class="invalid-feedback">
+                                    <div *ngIf="f.identificacion_Paciente.errors.required">La Identificacion del Paciente es requerida</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Apellidos:</label>
+                            </div>
+                            <div class="form-group">
+                                <input placeholder="Digite el o los apellidos" value="{{paciente.apellidos}}" type="text" class="form-control" formControlName="apellidos" [ngClass]="{ 'is-invalid':  f.apellidos.errors }"> 
+                                <div *ngIf="submitted && f.apellidos.errors" class="invalid-feedback">
+                                    <div *ngIf="f.apellidos.errors.required">Apellidos del Paciente son requeridos</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Telefono:</label>
+                            </div>
+                            <div class="form-group">
+                                <input placeholder="Digite el telefono" value="{{paciente.telefono}}" class="form-control" formControlName="telefono" [ngClass]="{ 'is-invalid':  f.telefono.errors }">
+                                <div *ngIf="submitted && f.telefono.errors" class="invalid-feedback">
+                                    <div *ngIf="f.telefono.errors.required">Telefono del paciente requerido</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Edad:</label>
+                            </div>
+                            <div class="form-group">
+                                <input placeholder="Digite la edad" type="number" value="{{paciente.edad}}" class="form-control" formControlName="edad" [ngClass]="{ 'is-invalid':  f.edad.errors }">
+                                <div *ngIf="submitted && f.edad.errors" class="invalid-feedback">
+                                    <div *ngIf="f.edad.errors.required">Edad del paciente requerida</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <button class="btn btn-primary mr-1">Modificar</button>
+                <button class="btn btn-secondary" type="reset" (click)="onReset()">Cancelar</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+

@@ -1,0 +1,81 @@
+<div class="content">
+    <h2>Registrar Tratamientos</h2>
+    <br>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="box box-primary">
+                <div class="box-body">
+                    <div class="form-group">
+                        <label>Codigo Tratamiento:</label>
+                    </div>
+                    <div class="input-group">
+                        <input [(ngModel)]="tratamiento.codigo_Tratamiento" class="form-control" placeholder="Digite codigo del tratamiento">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="box box-primary">
+                <div class="box-body">
+                    <div class="form-group">
+                        <label>Nombre Tratamiento:</label>
+                    </div>
+                    <div class="input-group">
+                        <input [(ngModel)]="tratamiento.nombre" class="form-control" placeholder="Digite nombre del tratamiento">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="box box-primary">
+                <div class="box-body">
+                    <div class="form-group">
+                        <label>Costo Del Tratamiento:</label>
+                    </div>
+                    <div class="input-group">
+                        <input [(ngModel)]="tratamiento.costo" class="form-control" placeholder="Digite Costo del tratamiento" type="number">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div id="tablaBotones">
+        <table>
+            <tr>
+                <td><button (click)="add()" class="btn btn-primary">Registrar</button></td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td><button class="btn btn-danger">Cancelar</button></td>
+            </tr>
+        </table>
+    </div>
+    <br>
+    <br>
+    <div class="box">
+        <div class="box-header">
+            <h2 class="box-title">Consulta De Tratamientos </h2>
+        </div>
+        <div class="box-body">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>CODIGO</th>
+                        <th>Nombre</th>
+                        <th>Costo</th>
+                        <th>Modificar</th>
+                        <th>Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let tratamiento of tratamientos">
+                        <td>{{tratamiento.codigo_Tratamiento}}</td>
+                        <td>{{tratamiento.nombre}}</td>
+                        <td>{{tratamiento.costo}}</td>
+                        <td routerLink='/editTratamiento/{{tratamiento.codigo_Tratamiento}}' id="editar"><a class="btn btn-primary btn-edit "><i class="fa fa-edit"></i></a></td>
+                        <td routerLink='/deleteTratamiento/{{tratamiento.codigo_Tratamiento}}' id="eliminar"><a class="btn btn-danger btn-delete "><i class="fa fa-minus-square fa-lg fa-fw"></i></a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>  
+    </div>
+</div>
