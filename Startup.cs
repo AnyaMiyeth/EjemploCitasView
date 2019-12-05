@@ -28,10 +28,10 @@ namespace Dental_White
             services.AddDbContext<DentalWhiteContext>(opt=>opt.UseSqlServer(@"Server=(LocalDB)\MSSQLLocalDB;Database=DentalWhite;Trusted_Connection=True;MultipleActiveResultSets=true"));
             services.AddControllersWithViews();
             // In production, the Angular files will be served from this directory
-            services.AddSpaStaticFiles(configuration =>
-            {
-                configuration.RootPath = "ClientApp/dist";
-            });
+            //services.AddSpaStaticFiles(configuration =>
+            //{
+            //    configuration.RootPath = "ClientApp/dist";
+            //});
             services.AddSwaggerDocument();
         }
 
@@ -76,7 +76,7 @@ namespace Dental_White
 
                 if (env.IsDevelopment())
                 {
-                    spa.UseAngularCliServer(npmScript: "start");
+                    //spa.UseAngularCliServer(npmScript: "start");
                 }
             });
         }
